@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Zapatillas</title>
+</head>
+<body>
+<h1>Lista de Zapatillas</h1>
+<ul>
+{% for zapatilla in zapatillas %}
+    <li>
+        <a href="{% url 'detalle_zapatilla' zapatilla.id %}">{{ zapatilla.nombre }}</a>
+        <img src="{{ zapatilla.imagen.url }}" alt="{{ zapatilla.nombre }}" style="width:100px;height:100px;">
+    </li>
+{% endfor %}
+</ul>
+</body>
+</html>
